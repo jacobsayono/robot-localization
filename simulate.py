@@ -100,3 +100,4 @@ class Simulation(object):
 			self.sense()
 			dy, dx = self.random_move()
 			self.move(dy,dx)
+			
