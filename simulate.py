@@ -5,9 +5,6 @@ from matplotlib import pyplot as plt
 
 class Simulation(object):
 	def __init__(self, grid, blur, p_hit,start_pos=None):
-		"""
-
-		"""
 		self.grid = grid
 		self.beliefs = localizer.initialize_beliefs(self.grid)
 		self.height = len(grid)
@@ -43,7 +40,7 @@ class Simulation(object):
 		beliefs = deepcopy(self.beliefs)
 		new_beliefs = localizer.sense(color, self.grid, beliefs, self.p_hit, self.p_miss)
 		if not new_beliefs or len(new_beliefs) == 0:
-			print "NOTE! The robot doesn't have a working sense function at this point."
+			print("NOTE! The robot doesn't have a working sense function at this point.")
 			self.beliefs = beliefs
 		else:
 			self.beliefs = new_beliefs
